@@ -67,7 +67,7 @@ void ActionDeleteObject::Execute()
 	}
 	
 
-	pGrid->PrintErrorMessage("Cell Contains No Objects .. Click To Continue ...");
+	pGrid->PrintErrorMessage("Cell Is Not A Starting Cell Of A Game Object .. Click To Continue ...");
 }
 
 

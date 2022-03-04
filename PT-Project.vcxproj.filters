@@ -350,4 +350,7 @@
     </ClInclude>
     <ClInclude Include="NewGame.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
 </Project>
