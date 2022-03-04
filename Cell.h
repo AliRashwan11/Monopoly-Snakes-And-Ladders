@@ -43,13 +43,12 @@ public:
 	Cell(const CellPosition & pos); // A constructor initializes the cell position with the passed CellPosition
 	Cell(int v, int h);		        // A constructor initializes the cell position with the passed vCell and hCell
 
-	// ======= Setters and Getters Functions ======= 
-
-	CellPosition GetCellPosition() const;   // A getter for the "position" data member
 	
-	bool SetGameObject(GameObject * pGObj);	// A setter for pGameObject of the cell
-	                                        // It does NOT add the object and returns false if the cell already contains one
-	GameObject * GetGameObject() const;     // A getter for pGameObject of the cell
+	CellPosition GetCellPosition() const;   
+	
+	bool SetGameObject(GameObject * pGObj);	
+	                                        
+	GameObject * GetGameObject() const;    
 
 	void SetIsCrowded(bool);
 	bool GetIsCrowded();
@@ -77,9 +76,7 @@ public:
 	Ladder * HasLadder() const;	// Checks if pGameObject is a Ladder Then returns it if a ladder or returns NULL if not ladder
 	Snake * HasSnake() const;	// Checks if pGameObject is a Snake Then returns it if a snake or returns NULL if not snake
 	Card * HasCard() const;	    // Checks if pGameObject is a Card Then returns it if a card or returns NULL if not card
-	Card* HasCardNine() const;
-	CardTen* HasCardTen() const;
-	CardEleven* HasCardEleven() const;
+	
 
 	
 	// ======= Drawing Functions ======= 

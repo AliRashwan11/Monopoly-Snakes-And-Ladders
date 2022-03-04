@@ -57,7 +57,6 @@ public:
 
 	int CellAvailability(CellPosition&);  
 
-	// ========= Setters and Getters Functions =========
 
 	Input * GetInput() const;	// Gets a Pointer to the Input
 	Output * GetOutput() const; // Gets a Pointer to the Output 
@@ -68,7 +67,6 @@ public:
 	void SetEndGame(bool endGame);	 // A setter for endGame data member
 	bool GetEndGame() const;		 // A getter for endGame data member
 
-	void ResetGame();
 	void ResetToPlayer0();
 
 	void SetCrowded(int,int,int);
@@ -94,9 +92,6 @@ public:
 	void AdvanceCurrentPlayer();     // Increments the currPlayerNum and if reaches MaxPlayerCount reset to 0 (using %)
 	void RetardCurrentPlyaer();
 
-	///TODO: add any needed setter/getter "EXCEPT" ANY setters or getters of "CellList" or "PlayerList" (Forbidden for class Responsibilities)
-
-	// ========= Other Getters =========
 	
 	Player * GetCurrentPlayer() const;	// Gets a Pointer to the Current Player	 
 	Ladder * GetNextLadder(const CellPosition & position);  // Gets a Pointer to the first Ladder after the passed "position"
@@ -110,7 +105,7 @@ public:
 	Card * GetCardObject(CellPosition);
 
 
-	// ========= User Interface Functions =========
+
 
 	void UpdateInterface() const;		// It Updates the Grid according to the last state of the game
 	                                    // In Design mode, it draws all cells/cards THEN all ladders/snakes THEN all players

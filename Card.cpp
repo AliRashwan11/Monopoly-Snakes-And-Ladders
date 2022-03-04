@@ -7,7 +7,7 @@ Card::Card(const CellPosition & pos) : GameObject(pos),cardNumber(0) // sets the
 
 void Card::SetCardNumber(int cnum)
 {
-	cardNumber = cnum; // needs validation
+	cardNumber = cnum; 
 }
 
 void Card::SetPosition(CellPosition pos)
@@ -38,8 +38,7 @@ void Card::ReadCardParameters(Grid * pGrid)
 
 void Card::Apply(Grid* pGrid, Player* pPlayer) 
 {
-	// As written below the "Roll Dice" action in the document ==> Check the Project Document
-	// "If a player reaches a card of any other type", the following message should be printed then wait mouse click
+	
 
 	pGrid->PrintErrorMessage("You have reached card " + to_string(cardNumber) + ". Click to continue ...");
 }

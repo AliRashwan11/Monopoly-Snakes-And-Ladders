@@ -3,7 +3,7 @@
 
 GameObject::GameObject(const CellPosition & pos)
 {
-	position = pos; // Sets Position
+	position = pos; 
 }
 
 void GameObject::SetPosition(CellPosition pos)

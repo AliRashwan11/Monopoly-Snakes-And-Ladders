@@ -24,6 +24,12 @@ void AddSnakeAction::ReadActionParameters()
 		startPos = pIn->GetCellClicked();
 	}
 
+	while ((startPos.VCell() == 0) && (startPos.HCell()==10))
+	{
+		pOut->PrintMessage("Start Cell Of Snake Cannot Be Last Cell Of Grid .. Please Re-Click ...");
+		startPos = pIn->GetCellClicked();
+	}
+
 	// Read the endPos parameter
 	pOut->PrintMessage("Click On Appropriate End Cell ...");
 	endPos = pIn->GetCellClicked();
@@ -106,27 +112,26 @@ void AddSnakeAction::ReadActionParameters()
 void AddSnakeAction::Execute()
 {
 
-	// The first line of any Action Execution is to read its parameter first 
-	// and hence initializes its data members
+
 	ReadActionParameters();
 
 	if (validation1 == 1 && validation2 == 0)
 	{
-		// Create a Ladder object with the parameters read from the user
+		
 		Snake* pSnake = new Snake(startPos,endPos);
 
 		Grid* pGrid = pManager->GetGrid(); // We get a pointer to the Grid from the ApplicationManager
 
-		// Add the card object to the GameObject of its Cell:
+		
 		bool added = pGrid->AddObjectToCell(pSnake);
 
 		// if the GameObject cannot be added
 		if (!added)
 		{
-			// Print an appropriate message
+			
 			pGrid->PrintErrorMessage("Error: Cell already has an object ! Click to continue ...");
 		}
-		// Here, the ladder is created and added to the GameObject of its Cell, so we finished executing the AddLadderAction
+		
 
 	}
 }

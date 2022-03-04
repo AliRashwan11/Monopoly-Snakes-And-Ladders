@@ -15,10 +15,9 @@
 
 enum GUI_MODE { MODE_DESIGN, MODE_PLAY };
 
-enum DESIGN_MODE_ITEMS // The items of the Design Mode (you should add more items)
+enum DESIGN_MODE_ITEMS // The items of the Design Mode 
 {
-	// Note: Items MUST be ordered here as they appear in menu
-	// If you want to change the menu items order, change the order here
+	
 
 	ITM_ADD_LADDER,
 	ITM_ADD_SNAKE,
@@ -32,15 +31,13 @@ enum DESIGN_MODE_ITEMS // The items of the Design Mode (you should add more item
 	ITM_EXIT_DESIGN_MODE,
 
 
-	///TODO: Add more items names here
 
 	DESIGN_ITM_COUNT	// no. of items ==> This should be the last line in this enum
 };
 
-enum PLAY_MODE_ITEMS // The items of the Play Mode (you should add more items)
+enum PLAY_MODE_ITEMS // The items of the Play Mode 
 {
-	// Note: Items are ordered here as they appear in menu
-	// If you want to change the menu items order, change the order here
+	
 
 	ITM_ROLL_DICE,
 	ITM_INPUT_DICE_NUMBER,
@@ -48,7 +45,6 @@ enum PLAY_MODE_ITEMS // The items of the Play Mode (you should add more items)
 	ITM_SWITCH_TO_DESIGN_MODE,
 	ITM_EXIT_PLAY_MODE,
 
-	///TODO: Add more items names here
 
 	PLAY_ITM_COUNT		// no. of items ==> This should be the last line in this enum
 };
@@ -95,7 +91,6 @@ struct UI_Info	// User Interface Info.                                          
 
 	color PlayerColors[MaxPlayerCount];		// Color of each player
 
-	///TODO: Add more members if needed
 
 } UI;	// create a global object UI
 

@@ -50,7 +50,7 @@ ActionType Input::GetUserAction() const
 	int x = -1, y = -1;
 	GetPointClicked(x, y);
 
-	//  ============ GUI in the Design mode ============
+	
 	if (UI.InterfaceMode == MODE_DESIGN)
 	{
 		// [1] If user clicks on the Toolbar
@@ -91,7 +91,7 @@ ActionType Input::GetUserAction() const
 		return STATUS;
 	}
 
-	// ============ GUI in the Play mode ============
+
 	else
 	{
 		if (y >= 0 && y < UI.ToolBarHeight)

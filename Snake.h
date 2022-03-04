@@ -15,7 +15,7 @@ class Player;
 class Snake : public GameObject 
 {
 
-	// Note: the "position" data member inherited from the GameObject class is used as the ladder's "Start Cell Position"
+	
 
 	CellPosition endCellPos; // here is the ladder's End Cell Position
 

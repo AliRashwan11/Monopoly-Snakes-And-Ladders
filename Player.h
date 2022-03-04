@@ -31,7 +31,6 @@ public:
 
 	Player(Cell * pCell, int playerNum); // Constructor making any needed initializations
 
-	// ====== Setters and Getters ======
 
 	Cell* GetCell() const;			// A getter for the pCell
 
@@ -56,15 +55,12 @@ public:
 	bool GetHasCardEleven() const;
 
 
-	///TODO: You can add setters and getters for data members here (if needed)
 
-	// ====== Drawing Functions ======
 
 	void Draw(Output* pOut) const;			// Draws the Player's Circle on its current cell
 
 	void ClearDrawing(Output* pOut) const;	// Clears the Player's Circle from its current cell
 
-	// ====== Game Functions ======
 
 	void Move(Grid * pGrid, int diceNumber);	// Moves the Player with the passed diceNumber 
 	                                            // and Applies the Game Object's effect (if any) of the end reached cell 

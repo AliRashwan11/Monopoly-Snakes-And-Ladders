@@ -17,7 +17,7 @@ public:
 
 	Action(ApplicationManager *pApp);  // Constructor
 
-	// ============ Virtual Functions ============
+
 
 	virtual void ReadActionParameters() = 0; // Reads parameters required for action to execute 
 	                                         // (code depends on action type so virtual)

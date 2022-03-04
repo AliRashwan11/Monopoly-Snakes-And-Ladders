@@ -11,26 +11,24 @@
 #include "PasteAction.h"
 #include "NewGame.h"
 
-///TODO: Add #include for all action types
+
 
 ApplicationManager::ApplicationManager()
 {
-	// Create Input, output and Grid
+	
 	pOut = new Output();
 	pIn = pOut->CreateInput();
 	pGrid = new Grid(pIn, pOut);
 }
 
-////////////////////////////////////////////////////////////////////////////////////
+
 
 ApplicationManager::~ApplicationManager()
 {
 	delete pGrid;
 }
 
-//==================================================================================//
-//								Interface Management Functions						//
-//==================================================================================//
+
 
 Grid * ApplicationManager::GetGrid() const
 {
@@ -42,9 +40,7 @@ void ApplicationManager::UpdateInterface() const
 	pGrid->UpdateInterface();
 }
 
-//==================================================================================//
-//								Actions Related Functions							//
-//==================================================================================//
+
 
 ActionType ApplicationManager::GetUserAction() const
 {
@@ -52,7 +48,7 @@ ActionType ApplicationManager::GetUserAction() const
 	return pIn->GetUserAction();
 }
 
-////////////////////////////////////////////////////////////////////////////////////
+
 
 // Creates an action and executes it
 void ApplicationManager::ExecuteAction(ActionType ActType) 
@@ -78,7 +74,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		break;
 
 	case TO_PLAY_MODE:
-		pOut->CreatePlayModeToolBar(); // temporary till you made its action class (CHANGE THIS LATTER)
+		pOut->CreatePlayModeToolBar(); 
 		break;
 
 	case ROLL_DICE:
@@ -86,7 +82,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		break;
 
 	case TO_DESIGN_MODE:
-		pOut->CreateDesignModeToolBar(); // temporary till you made its action class (CHANGE THIS LATTER)
+		pOut->CreateDesignModeToolBar(); 
 		break;
 
 	case INPUT_DICE:
@@ -118,7 +114,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 
 
-		///TODO: Add a case for EACH Action type in the Design mode or Play mode
+
 
 
 
@@ -130,7 +126,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	if(pAct != NULL)
 	{
 		pAct->Execute(); // Execute
-		delete pAct;	 // Action is not needed any more after executing ==> delete it
+		delete pAct;	 
 		pAct = NULL;
 	}
 }

@@ -22,7 +22,6 @@ enum ActionType // The actions supported (add more as needed)
 	EXIT_DESIGN_MODE,			// Exit Application
 
 
-	///TODO: Add more action types of Design Mode
 
 	//  [2] Actions of Play Mode
 
@@ -32,7 +31,6 @@ enum ActionType // The actions supported (add more as needed)
 	TO_DESIGN_MODE,	// Go to Design Mode
 	EXIT_PLAY_MODE,
 
-	///TODO: Add more action types of Play Mode
 
 	//  [3] Others
 

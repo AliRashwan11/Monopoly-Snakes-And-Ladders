@@ -16,12 +16,12 @@ Cell::Cell(const CellPosition & pos) : position(pos),IsCrowded(0),CrowdedFromSna
 
 Cell::Cell(int v, int h) : position(v, h),IsCrowded(0)
 {
-	// initializes the data members (position & pGameObject)
+	
 	pGameObject = NULL;
 }
 
 
-// ======= Setters and Getters Functions ======= 
+
 
 
 CellPosition Cell::GetCellPosition() const
@@ -124,18 +124,6 @@ void Cell::SetOwnership(Player* pPlayer)
 }
 
 
-
-/*
-CardTen* Cell::HasCardTen() const
-{
-	return dynamic_cast<CardTen*>(pGameObject);
-}
-
-CardEleven* Cell::HasCardEleven() const
-{
-	return dynamic_cast<CardEleven*>(pGameObject);
-}*/
-
 void Cell::SetCrowdedFromLadder(bool a)
 {
 	CrowdedFromLadder = a;
@@ -159,18 +147,18 @@ bool Cell::GetCrowdedFromLadder()
 
 
 
-// ======= Drawing Functions ======= 
+
 
 void Cell::DrawCellOrCard(Output* pOut) const
 {
-	// Checks if there is a Card on the cell
-	if (HasCard()) // means if not NULL
+	
+	if (HasCard()) 
 		pGameObject->Draw(pOut); // draw the card then
 	else
 		pOut->DrawCell(position, -1); // draw empty cell (no card -1)
 }
 
-// separate from the above function because ladders/snakes should be drawn AFTER All Cells are drawn
+
 void Cell::DrawLadderOrSnake(Output* pOut) const
 {
 	if (HasLadder() || HasSnake())

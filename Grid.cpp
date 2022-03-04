@@ -39,12 +39,11 @@ Grid::Grid(Input* pIn, Output* pOut) : pIn(pIn), pOut(pOut) // Initializing pIn,
 	HasACardEleven = 0;
 }
 
-// ========= Adding or Removing GameObjects to Cells =========
 
 
-bool Grid::AddObjectToCell(GameObject * pNewObject)  // think if any validation is needed
+bool Grid::AddObjectToCell(GameObject * pNewObject)  
 {
-	// Get the cell position of pNewObject
+	
 	CellPosition pos = pNewObject->GetPosition();
 	if (pos.IsValidCell()) // Check if valid position
 	{
@@ -104,15 +103,10 @@ Card* Grid::GetCardObject(CellPosition Objpos)
 
 
 
-
-// Note: You may need to change the return type of this function (Think)
-
-
 void Grid::RemoveObjectFromCell(const CellPosition & pos)
 {
 	if (pos.IsValidCell()) // Check if valid position
 	{
-		// Note: you can deallocate the object here before setting the pointer to null if it is needed
 
 		CellList[pos.VCell()][pos.HCell()]->SetGameObject(NULL);
 	}
@@ -120,14 +114,11 @@ void Grid::RemoveObjectFromCell(const CellPosition & pos)
 
 void Grid::UpdatePlayerCell(Player * player, const CellPosition & newPosition)
 {
-	// Clear the player's circle from the old cell position
 	player->ClearDrawing(pOut);
 
-	// Set the player's CELL with the new position
 	Cell * newCell = CellList[newPosition.VCell()][newPosition.HCell()];
 	player->SetCell(newCell);	
 
-	// Draw the player's circle on the new cell position
 	player->Draw(pOut);
 }
 
@@ -137,7 +128,7 @@ void Grid::ResetToPlayer0()
 {
 	currPlayerNumber = 0;   // The player number that has the turn to play 
 }
-// ========= Setters and Getters Functions =========
+
 
 
 Input * Grid::GetInput() const
@@ -150,9 +141,9 @@ Output * Grid::GetOutput() const
 	return pOut;
 }
 
-void Grid::SetClipboard(Card * pCard) // to be used in copy/cut
+void Grid::SetClipboard(Card * pCard) // to be used in copy/cut   // implemented later
 {
-	// you may update slightly in implementation if you want (but without breaking responsibilities)
+	
 	Clipboard = pCard;
 }
 
@@ -181,7 +172,6 @@ void Grid::AdvanceCurrentPlayer()
 	currPlayerNumber = (currPlayerNumber + 1) % MaxPlayerCount; // this generates value from 0 to MaxPlayerCount - 1
 }
 
-// ========= Other Getters =========
 
 
 Player * Grid::GetCurrentPlayer() const
@@ -202,9 +192,6 @@ Ladder * Grid::GetNextLadder(const CellPosition & position)
 	{
 		for (int j = startH; j < NumHorizontalCells; j++) // searching from startH and RIGHT
 		{
-
-
-			///TODO: Check if CellList[i][j] has a ladder, if yes return it
 
 			if (CellList[i][j]->HasLadder())
 			{
@@ -394,7 +381,6 @@ void Grid::SetHasSnakeHead(int v, int h, bool a)
 	this->CellList[v][h]->SetHasSnakeHead(a);
 }
 
-// ========= User Interface Functions =========
 
 
 void Grid::UpdateInterface() const
@@ -410,7 +396,7 @@ void Grid::UpdateInterface() const
 			}
 		}
 
-		// 2- Draw other cell objects (ladders, snakes)
+		
 		for (int i = NumVerticalCells-1; i >= 0 ; i--) // bottom up
 		{
 			for (int j = 0; j < NumHorizontalCells; j++) // left to right
@@ -419,7 +405,7 @@ void Grid::UpdateInterface() const
 			}
 		}
 
-		// 3- Draw players
+		
 		for (int i = 0; i < MaxPlayerCount; i++)
 		{
 			PlayerList[i]->Draw(pOut);
@@ -439,9 +425,6 @@ void Grid::UpdateInterface() const
 
 		pOut->PrintPlayersInfo(playersInfo);
 
-		// Note: UpdatePlayerCell() function --> already update drawing players in Play Mode
-		//       so we do NOT need draw all players again in UpdateInterface() of the Play mode
-		// In addition, cards/snakes/ladders do NOT change positions in Play Mode, so need to draw them here too
 	}
 }
 

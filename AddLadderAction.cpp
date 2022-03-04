@@ -31,6 +31,12 @@ void AddLadderAction::ReadActionParameters()
 		startPos = pIn->GetCellClicked();
 	}
 
+	while (((startPos.VCell() == 8) && (startPos.HCell() == 0)) || ((startPos.VCell()==0) && (startPos.HCell()==10)))
+	{
+		pOut->PrintMessage("Start Cell Of Ladder Cant Be Cell 1 Or 99 .. Please Re-Click ...");
+		startPos = pIn->GetCellClicked();
+	}
+
 	// Read the endPos parameter
 	pOut->PrintMessage("Click On Appropriate End Cell ...");
 	endPos = pIn->GetCellClicked();
@@ -40,6 +46,8 @@ void AddLadderAction::ReadActionParameters()
 		pOut->PrintMessage("Invalid Cell .. Please Re-Click ...");
 		endPos = pIn->GetCellClicked();
 	}
+
+	
 
 	///TODO: Make the needed validations on the read parameters
 

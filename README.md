@@ -2,6 +2,7 @@
 # Game Modes
 
 The Game Contains 2 Modes .. Design Mode & Play Mode
+User Is Free To Move Around Between The 2 Throughout The Game
 
 ## Design Mode
 
@@ -69,3 +70,28 @@ CardEight : Gives ByPasser Choice To Either Be In Prison For 3 Whole Rounds (Not
 . Ladders Cant Be On Top Of Eachother
 
 
+
+# Ladders
+
+. Start Cannot Be First Cell Of Grid
+. End Can Be Last Cell Of Grid
+
+. Must Be Vertical Passing Through More Than A Cell .. Where Start Cell Is Below End Cell
+
+
+# Snake
+
+. Start Cannot Be Last Cell Of Grid (Endless Game)
+. End Can Be First Cell Of Game
+
+. Must Be Vertical Passing Through More Than A Cell .. Where Start Cell Is Above End Cell
+
+
+# Removing Game Objects
+
+. User Must Click On Start Of GameObject (If It Elongates To More Than A Cell) To Delete It
+  So Lower Most Cell Of Ladder .. Or Highest Cell Of Snake .. Or Cell Of A 
+
+
+
+# Included Is 8 Cards .. You're Allowed To Add More To Make The Game Even More Fun !
